@@ -9,18 +9,18 @@
 5. [Motivation for Choosing the Topic](#-motivation-for-choosing-the-topic)
 6. [Project Objectives](#-project-objectives)
 7. [System Requirements](#-system-requirements)
-8. [Requirements](#-system-requirements)  
-9. [Installation / Instructions](#-installation--instructions)
-10. [Database & Data Model](#-database--data-model)
-11. [Architecture (MVVM)](#-architecture-mvvm)
-12. [Pages / Modules Overview](#-pages--modules-overview)
-   - [Login / Authentication](#login--authentication)  
-   - [Students / Users](#students--users)  
-   - [Courses / Specializations](#courses--specializations)  
-   - [Registrations / Enrollments](#registrations--enrollments)  
+8. [Requirements & Installation](#-requirements--installation)
+9. [Database & Data Model](#-database--data-model)
+10. [Architecture (MVVM)](#-architecture-mvvm)
+11. [Pages / Modules Overview](#-pages--modules-overview)
+   - [Login / Authentication](#login--authentication)
+   - [Students / Users](#students--users)
+   - [Courses / Specializations](#courses--specializations)
+   - [Registrations / Enrollments](#registrations--enrollments)
    - [Reports / PDF Export](#reports--pdf-export)
-13. [Conclusion](#-conclusion)
-14. [License](#-license)
+12. [Conclusion](#-conclusion)
+13. [License](#-license)
+
 
 ---
 
@@ -104,3 +104,59 @@ The topic was chosen due to a passion for **history and travel**, combining expl
 - Performance and support for multiple simultaneous users  
 - Intuitive and appealing interface  
 - High availability
+
+---
+
+## ⚙️ Requirements & Installation
+
+To run Topic Trips Guide, your system must meet the following requirements and follow the installation steps.
+
+---
+
+### 🖥️ System Requirements
+- Windows 10 or higher (or any OS supporting .NET 8.0)  
+- Modern web browser (Chrome, Edge, Firefox, Safari)
+
+---
+
+### 💻 Development Tools
+- Visual Studio 2022 Community Edition  
+- .NET SDK 8.0
+
+---
+
+### 🗄️ Database
+- MySQL server installed and running  
+- Optional: SQLite for local testing/development
+
+---
+
+### 📦 NuGet Packages / Dependencies
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore 8.0.11  
+- Microsoft.AspNetCore.Identity.UI 8.0.11  
+- Microsoft.EntityFrameworkCore.Sqlite 8.0.11  
+- Microsoft.EntityFrameworkCore.SqlServer 8.0.11  
+- Microsoft.EntityFrameworkCore.Tools 8.0.11  
+- Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.7  
+- Pomelo.EntityFrameworkCore.MySql 8.0.3  
+- QuestPDF 2025.5.0  
+- System.Text.Json 8.0.5
+
+---
+
+### 🌐 API / Services
+- OpenRouteService API key for route calculations  
+- Access to OpenStreetMap data for interactive maps
+
+---
+
+### 🛠️ Installation Instructions
+
+1. **Clone the repository**  
+```bash
+git clone https://github.com/yourusername/Topic-Trips-Guide.git
+cd Topic-Trips-Guide
+```
+2. **Configure database connection**
+
+Copy ```appsettings.example.json``` to ```appsettings.json```
