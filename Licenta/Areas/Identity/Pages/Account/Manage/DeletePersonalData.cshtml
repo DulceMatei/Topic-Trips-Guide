@@ -1,0 +1,61 @@
+﻿@page
+@model DeletePersonalDataModel
+@{
+    ViewData["Title"] = "Șterge Datele Personale";
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+
+
+
+<div class="delete-card p-4">
+    <h3 class="text-danger text-center mb-3">@ViewData["Title"]</h3>
+    <div class="alert alert-warning" role="alert">
+        <strong>Ștergerea acestor date va elimina permanent contul dvs. și nu poate fi recuperat.</strong>
+    </div>
+    <form id="delete-user" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+
+        @if (Model.RequirePassword)
+        {
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control rounded-20" autocomplete="current-password" aria-required="true" placeholder="Parola" />
+                <label asp-for="Input.Password" class="form-label">Parola</label>
+                <span asp-validation-for="Input.Password" class="text-danger small"></span>
+            </div>
+        }
+
+        <button type="submit" class="w-100 btn btn-danger rounded-20 fw-semibold">
+            Șterge contul
+        </button>
+    </form>
+</div>
+
+<style>
+    .delete-card {
+        background: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        max-width: 600px;
+        margin: 2rem auto 0;
+    }
+
+    .form-control.rounded-20 {
+        border-radius: 1.25rem !important;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .btn-danger {
+        transition: all 0.3s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #bb2d3b;
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+            transform: translateY(-2px);
+        }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

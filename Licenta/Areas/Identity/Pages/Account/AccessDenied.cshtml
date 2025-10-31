@@ -1,0 +1,403 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Acces Interzis";
+    ViewBag.HideFooter = true;
+}
+    <div class="access-denied-container">
+        <div class="container py-3">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card border-0 shadow-lg rounded-4">
+                        <div class="card-body text-center p-4">
+                            <div class="access-denied-icon">
+                                <i class="bi bi-shield-exclamation display-1 text-warning"></i>
+                            </div>
+
+                            <!-- Titlu -->
+                            <h1 class="h2 fw-bold text-dark mb-3">Acces Interzis</h1>
+
+                            <!-- Mesaj -->
+                            <p class="text-muted fs-5 mb-4">
+                                Nu aveți permisiunea necesară pentru a accesa această resursă.
+                            </p>
+
+                            <!-- Mesaj suplimentar -->
+                            <div class="alert alert-warning border-0 rounded-3 mb-4">
+                                <i class="bi bi-info-circle me-2"></i>
+                                <strong>Informație:</strong> Această pagină este restricționată și necesită drepturi speciale de administrator.
+                            </div>
+
+                            <!-- Butoane -->
+                            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                                <a class="btn btn-success btn-lg rounded-pill fw-semibold px-4" href="/home/index">
+                                    <i class="bi bi-house me-2"></i>Înapoi la Pagina Principală
+                                </a>
+
+                                <a class="btn btn-outline-secondary btn-lg rounded-pill fw-semibold px-4" href="javascript:history.back()">
+                                    <i class="bi bi-arrow-left me-2"></i>Înapoi
+                                </a>
+                            </div>
+
+                            <!-- Contact info -->
+                            <div class="mt-4 pt-4 border-top">
+                                <p class="text-muted small mb-0">
+                                    <i class="bi bi-envelope me-2"></i>
+                                    Aveți întrebări? Contactați administratorul site-ului.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .access-denied-container {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .access-denied-icon {
+        display: inline-block;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+        border-radius: 50%;
+        box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+        animation: pulse 2s infinite;
+        margin-bottom: 1.5rem;
+    }
+
+    .access-denied-container .card {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.95);
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    .access-denied-container .btn {
+        transition: all 0.3s ease;
+    }
+
+        .access-denied-container .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+    .access-denied-container .btn-success {
+        background-color: var(--primary-green, #28a745);
+        border-color: var(--primary-green, #28a745);
+    }
+
+        .access-denied-container .btn-success:hover {
+            background-color: var(--primary-green-hover, #218838);
+            border-color: var(--primary-green-hover, #218838);
+        }
+
+    .access-denied-container .alert {
+        background-color: rgba(255, 243, 205, 0.8);
+        color: #856404;
+    }
+
+    /* Animații */
+    @@keyframes pulse {
+        0%, 100%
+
+    {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    }
+
+    @@keyframes fadeInUp {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    /* Responsive Design */
+
+    @@media (min-width: 1400px) {
+        .access-denied-container
+
+    {
+        align-items: center;
+    }
+
+    .access-denied-icon {
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .card-body {
+        padding: 3.5rem !important;
+    }
+
+    }
+
+    @@media (max-width: 1200px) and (min-width: 992px) {
+        .access-denied-container
+
+    {
+        align-items: center;
+        padding-top: 2rem;
+    }
+
+    .access-denied-icon {
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-body {
+        padding: 3rem !important;
+    }
+
+    }
+
+    @@media (max-width: 991px) and (min-width: 768px) {
+        .access-denied-container
+
+    {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .access-denied-icon {
+        padding: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-body {
+        padding: 2.5rem !important;
+    }
+
+    .display-1 {
+        font-size: 4rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    }
+
+    @@media (max-width: 767px) and (min-width: 576px) {
+        .access-denied-container
+
+    {
+        align-items: flex-start;
+        padding-top: 1.5rem;
+    }
+
+    .access-denied-icon {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-body {
+        padding: 2rem !important;
+    }
+
+    .display-1 {
+        font-size: 3.5rem !important;
+    }
+
+    .h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .fs-5 {
+        font-size: 1.1rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .d-flex.flex-column.flex-sm-row {
+        flex-direction: column !important;
+    }
+
+    }
+
+    @@media (max-width: 575px) {
+        .access-denied-container
+
+    {
+        align-items: flex-start;
+        padding: 1rem 0;
+        min-height: 100vh;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .access-denied-icon {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        margin: 0.5rem 0;
+        border-radius: 1rem !important;
+    }
+
+    .card-body {
+        padding: 1.5rem !important;
+    }
+
+    .display-1 {
+        font-size: 3rem !important;
+    }
+
+    .h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .fs-5 {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .alert {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+        width: 100%;
+        margin-bottom: 0.75rem;
+        border-radius: 2rem !important;
+    }
+
+    .d-flex.flex-column.flex-sm-row {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .mt-4.pt-4 {
+        margin-top: 1.5rem !important;
+        padding-top: 1.5rem !important;
+    }
+
+    .small {
+        font-size: 0.8rem !important;
+    }
+
+    }
+
+    @@media (max-width: 400px) {
+        .container
+
+    {
+        padding: 0 0.5rem;
+    }
+
+    .access-denied-icon {
+        padding: 1rem;
+    }
+
+    .card-body {
+        padding: 1.25rem !important;
+    }
+
+    .display-1 {
+        font-size: 2.5rem !important;
+    }
+
+    .h2 {
+        font-size: 1.3rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.65rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    }
+
+    @@media (max-height: 500px) and (orientation: landscape) {
+        .access-denied-container
+
+    {
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+
+    .access-denied-icon {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-body {
+        padding: 1.5rem !important;
+    }
+
+    .display-1 {
+        font-size: 2.5rem !important;
+    }
+
+    .h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .fs-5 {
+        font-size: 0.95rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .alert {
+        margin-bottom: 1rem !important;
+        padding: 0.5rem;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .mt-4.pt-4 {
+        margin-top: 1rem !important;
+        padding-top: 1rem !important;
+    }
+
+    }
+
+    @@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .access-denied-icon
+
+    {
+        box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+    }
+
+    .card {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    }
+</style>

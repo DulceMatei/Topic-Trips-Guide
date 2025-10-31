@@ -1,0 +1,38 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Înregistrare";
+    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
+    ViewBag.HideFooter = true;
+    ViewBag.HideNavbar = true;
+}
+<form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <h2 class="d-flex justify-content-center">ÎNREGISTRARE</h2>
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+    <div class="form-floating mb-3">
+        <input asp-for="Input.Nume" class="form-control rounded-20" autocomplete="Nume" aria-required="true" placeholder="Nume" />
+        <label asp-for="Input.Nume">Nume</label>
+        <span asp-validation-for="Input.Nume" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Input.Email" class="form-control rounded-20" autocomplete="username" aria-required="true" placeholder="nume@exemplu.com" />
+        <label asp-for="Input.Email">Email</label>
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Input.Password" class="form-control rounded-20" autocomplete="new-password" aria-required="true" placeholder="parolă" />
+        <label asp-for="Input.Password">Parolă</label>
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Input.ConfirmPassword" class="form-control rounded-20" autocomplete="new-password" aria-required="true" placeholder="confirmă parola" />
+        <label asp-for="Input.ConfirmPassword">Confirmă parola</label>
+        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+    </div>
+    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary rounded-20">Înregistrează-te</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

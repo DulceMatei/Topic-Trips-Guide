@@ -1,0 +1,290 @@
+﻿@page
+@model Licenta.Pages.Admin.PanouAdminModel
+@{
+    ViewData["Title"] = "Panou Administrator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panou-admin">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <div class="admin-header-icon mb-3">
+                <i class="bi bi-shield-lock display-4 text-success"></i>
+            </div>
+            <h1 class="display-4 fw-bold text-dark mb-2">Panou Administrator</h1>
+            <p class="lead text-muted">Gestionează conținutul și moderează activitatea site-ului</p>
+        </div>
+
+        <!-- Trasee Prestabilite -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="fw-bold text-center mb-4">
+                    <i class="bi bi-map me-2 text-success"></i>Trasee Prestabilite
+                </h3>
+                <div class="row g-3">
+                    <!-- Trasee Istorice -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="admin-card card border-0 shadow-lg">
+                            <div class="card-body text-center p-3">
+                                <div class="card-icon mb-3">
+                                    <i class="bi bi-building fs-1 text-success"></i>
+                                </div>
+                                <h6 class="card-title fw-bold mb-2">Traseul lui Vlad Țepeș</h6>
+                                <a class="btn btn-outline-success btn-sm rounded-pill fw-semibold"
+                                   href="/Trasee/VladTepes">
+                                    <i class="bi bi-pencil me-1"></i> Editează
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="admin-card card border-0 shadow-lg">
+                            <div class="card-body text-center p-3">
+                                <div class="card-icon mb-3">
+                                    <i class="bi bi-building fs-1 text-success"></i>
+                                </div>
+                                <h6 class="card-title fw-bold mb-2">Traseul lui Napoleon Bonaparte</h6>
+                                <a class="btn btn-outline-success btn-sm rounded-pill fw-semibold"
+                                   href="/Trasee/NapoleonBonaparte">
+                                    <i class="bi bi-pencil me-1"></i> Editează
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="admin-card card border-0 shadow-lg">
+                            <div class="card-body text-center p-3">
+                                <div class="card-icon mb-3">
+                                    <i class="bi bi-building fs-1 text-success"></i>
+                                </div>
+                                <h6 class="card-title fw-bold mb-2">Traseul lui Otto von Bismarck</h6>
+                                <a class="btn btn-outline-success btn-sm rounded-pill fw-semibold"
+                                   href="/Trasee/OttoVonBismarck">
+                                    <i class="bi bi-pencil me-1"></i> Editează
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trasee Culinare -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="admin-card card border-0 shadow-lg">
+                            <div class="card-body text-center p-3">
+                                <div class="card-icon mb-3">
+                                    <i class="bi bi-cup-hot fs-1 text-success"></i>
+                                </div>
+                                <h6 class="card-title fw-bold mb-2">Traseu Culinar - Lisabona</h6>
+                                <a class="btn btn-outline-success btn-sm rounded-pill fw-semibold"
+                                   href="/Trasee/Lisabona">
+                                    <i class="bi bi-pencil me-1"></i> Editează
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="admin-card card border-0 shadow-lg">
+                            <div class="card-body text-center p-3">
+                                <div class="card-icon mb-3">
+                                    <i class="bi bi-cup-hot fs-1 text-success"></i>
+                                </div>
+                                <h6 class="card-title fw-bold mb-2">Traseu Culinar - Lyon</h6>
+                                <a class="btn btn-outline-success btn-sm rounded-pill fw-semibold"
+                                   href="/Trasee/Lyon">
+                                    <i class="bi bi-pencil me-1"></i> Editează
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="admin-card card border-0 shadow-lg">
+                            <div class="card-body text-center p-3">
+                                <div class="card-icon mb-3">
+                                    <i class="bi bi-cup-hot fs-1 text-success"></i>
+                                </div>
+                                <h6 class="card-title fw-bold mb-2">Traseu Culinar - Bologna</h6>
+                                <a class="btn btn-outline-success btn-sm rounded-pill fw-semibold"
+                                   href="/Trasee/Bologna">
+                                    <i class="bi bi-pencil me-1"></i> Editează
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recenzii -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="fw-bold text-center mb-4">
+                    <i class="bi bi-chat-square-text me-2 text-success"></i>Moderare Conținut
+                </h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="admin-card card h-100 border-0 shadow-lg">
+                            <div class="card-body d-flex flex-column text-center p-4">
+                                <div class="card-icon mb-4">
+                                    <i class="bi bi-chat-square-text display-1 text-success"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-3">Recenzii Utilizatori</h5>
+                                <p class="card-text text-muted mb-4 flex-grow-1">
+                                    Moderează recenziile adăugate de utilizatori. Aprobă sau respinge conținutul necorespunzător.
+                                </p>
+                                <a class="btn btn-success btn-lg rounded-pill fw-semibold px-4"
+                                   href="/Admin/Recenzii-admin">
+                                    <i class="bi bi-arrow-right me-2"></i>Vezi Recenziile
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="alert alert-light border-0 shadow-sm rounded-4 p-4">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-info-circle text-success me-3 fs-4"></i>
+                        <div>
+                            <h6 class="mb-1 fw-semibold">Acces Administrator</h6>
+                            <p class="mb-0 text-muted">Ai acces complet la toate funcționalitățile de administrare. Folosește aceste opțiuni cu atenție.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .panou-admin {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+
+        .admin-header-icon {
+            display: inline-block;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-green), #4ade80);
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(149, 216, 42, 0.3);
+        }
+
+        .admin-card {
+            border-radius: 1.5rem !important;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .admin-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, var(--primary-green), #4ade80);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s ease;
+            }
+
+            .admin-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .admin-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 60px rgba(149, 216, 42, 0.2);
+            }
+
+        .card-icon {
+            transition: transform 0.4s ease;
+        }
+
+        .admin-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .admin-card .card-title {
+            font-size: 1.5rem;
+            color: #2d3748;
+            transition: color 0.3s ease;
+        }
+
+        .admin-card:hover .card-title {
+            color: var(--primary-green);
+        }
+
+        .admin-card .card-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .admin-card .btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(149, 216, 42, 0.3);
+        }
+
+            .admin-card .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(149, 216, 42, 0.4);
+            }
+
+        /* Responsive improvements */
+        @@media (max-width: 768px) {
+            .panou-admin .container {
+                padding: 2rem 1rem;
+            }
+
+            .display-4 {
+                font-size: 2.5rem;
+            }
+
+            .admin-card .card-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .admin-card .card-title {
+                font-size: 1.3rem;
+            }
+
+            .admin-card .card-text {
+                font-size: 1rem;
+            }
+
+            .card-icon i {
+                font-size: 3rem !important;
+            }
+        }
+
+        /* Animation pentru intrare */
+        .admin-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+            .admin-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+        @@keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+}

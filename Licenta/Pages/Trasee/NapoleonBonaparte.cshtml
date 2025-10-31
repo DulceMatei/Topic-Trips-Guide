@@ -1,0 +1,398 @@
+﻿@page
+@model Licenta.Pages.Trasee.NapoleonBonaparteModel
+@{
+    ViewData["Title"] = "Traseu Napoleon Bonaparte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        .napoleon-page {
+            background-color: #f8f9fa;
+        }
+
+            .napoleon-page #map-container {
+                min-height: 550px;
+                height: 100%;
+                border-radius: 1rem;
+            }
+
+            .napoleon-page #view-route-btn {
+                background-color: #4a90e2;
+                border-color: #4a90e2;
+                color: white;
+            }
+
+                .napoleon-page #view-route-btn:hover {
+                    background-color: #357ab8;
+                    border-color: #357ab8;
+                }
+
+            .napoleon-page .btn-outline-primary {
+                color: #4a90e2;
+                border-color: #4a90e2;
+                background-color: white;
+            }
+
+                .napoleon-page .btn-outline-primary:hover {
+                    background-color: #4a90e2;
+                    color: white;
+                }
+
+            .napoleon-page #google-maps-link {
+                background-color: #45b97c;
+                border-color: #45b97c;
+                color: white;
+            }
+
+                .napoleon-page #google-maps-link:hover {
+                    background-color: #379f69;
+                    border-color: #379f69;
+                }
+
+            .napoleon-page #pdf-complet-btn {
+                background-color: #e74c3c;
+                border-color: #e74c3c;
+                color: white;
+            }
+
+                .napoleon-page #pdf-complet-btn:hover {
+                    background-color: #c0392b;
+                    border-color: #c0392b;
+                }
+
+            .napoleon-page .route-layout {
+                display: flex;
+                gap: 2rem;
+            }
+
+            .napoleon-page .left-panel {
+                flex: 0 0 300px;
+            }
+
+            .napoleon-page .right-panel {
+                flex: 1;
+            }
+
+            .napoleon-page .controls-section {
+                display: flex;
+                gap: 2rem;
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+                .napoleon-page .controls-section .card {
+                    flex: 1 1 400px;
+                }
+
+            .napoleon-page .card {
+                border-radius: 1rem;
+            }
+
+            .napoleon-page .card-body {
+                padding: 1rem 1.25rem;
+            }
+
+            .napoleon-page .btn {
+                border-radius: 0.75rem !important;
+            }
+
+            .napoleon-page .btn-danger, .napoleon-page .btn-success, .napoleon-page .btn-info, .napoleon-page .btn-outline-primary, .napoleon-page .btn-outline-secondary {
+                white-space: nowrap;
+            }
+
+            .napoleon-page .list-group-item {
+                border: none;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .napoleon-page .btn-sm {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .napoleon-page #location-list .btn-info, .napoleon-page #disponibile-list .btn-info {
+                background-color: #00bcd4;
+                border-color: #00bcd4;
+                color: white;
+            }
+
+            .napoleon-page #calc-route-btn {
+                background-color: #6ba015;
+                color: white;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .napoleon-page .btn-personalizeaza {
+                background-color: #95d82a;
+                border-color: #95d82a;
+                color: white;
+            }
+
+                .napoleon-page .btn-personalizeaza:hover {
+                    background-color: #7fbf1f;
+                    border-color: #7fbf1f;
+                }
+
+            .napoleon-page #locationDetailsModal .modal-body p {
+                margin-bottom: 0.5rem;
+                font-size: 0.95rem;
+                color: #444;
+            }
+
+            .napoleon-page #locationDetailsModal h5 {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .napoleon-page #locationDetailsModal .form-control {
+                font-size: 0.9rem;
+                border-radius: 0.5rem;
+            }
+
+            .napoleon-page #locationDetailsModal button[type="submit"] {
+                background-color: #007bff;
+                border-radius: 0.5rem;
+            }
+
+            .napoleon-page #location-list .btn-danger, .napoleon-page #disponibile-list .btn-danger {
+                background-color: #e74c3c;
+                border-color: #e74c3c;
+            }
+
+            .napoleon-page #disponibile-list .btn-success {
+                background-color: #8bc34a;
+                border-color: #8bc34a;
+            }
+
+        @@media (max-width: 992px) {
+            .napoleon-page .route-layout,
+            .napoleon-page .controls-section {
+                flex-direction: column;
+            }
+
+                .napoleon-page .left-panel,
+                .napoleon-page .right-panel,
+                .napoleon-page .controls-section .card {
+                    width: 100%;
+                }
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="/js/traseuPrestabilit.js?v=@DateTime.Now.Ticks"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/leaflet-image/leaflet-image.js"></script>
+}
+
+<div class="napoleon-page">
+    <div id="page-template" data-template-name="Napoleon Bonaparte" data-traseu-id="@Model.TraseuId"></div>
+    <h2 class="text-center mt-4">Traseul lui Napoleon Bonaparte</h2>
+
+    <div class="container-fluid py-3">
+        <div id="status-message" class="alert d-none" role="alert" aria-live="polite"></div>
+
+        <div class="route-layout">
+            <div class="left-panel">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Locații</h4>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <small class="text-muted">Trage pentru a reordona</small>
+                        }
+                    </div>
+                    <div id="location-list-container">
+                        <ul id="location-list" class="list-group list-group-flush"></ul>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="transport-mode" class="form-label">Mod de transport:</label>
+                                <select id="transport-mode" class="form-select">
+                                    <option value="driving-car" selected>Mașină</option>
+                                    <option value="cycling-regular">Bicicletă</option>
+                                    <option value="foot-walking">Mers pe jos</option>
+                                </select>
+                            </div>
+                            <div class="alert alert-info text-center">
+                                Distanță totală: <span id="distance-value">Se calculează...</span> km | Durată: <span id="duration-value">Se calculează...</span>
+                            </div>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <button id="calc-route-btn" class="btn btn-outline-secondary">Salvează ruta</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="mb-4">
+                    <div id="map-container" class="map shadow-sm w-100" role="region" aria-label="Hartă interactivă a traseului"></div>
+                </div>
+
+                <div class="card rounded-4 shadow-sm mb-4">
+                    <div class="card-body d-flex flex-wrap gap-2 justify-content-center">
+                        <button id="view-route-btn" class="btn btn-primary">Vezi tot traseul</button>
+                        <button class="btn btn-personalizeaza" onclick="personalizeazaTraseu()">Personalizează</button>
+                        <a id="google-maps-link" href="#" target="_blank" class="btn btn-success d-none">Vezi traseul complet pe Google Maps</a>
+                        <button type="button" id="pdf-complet-btn" class="btn btn-danger">
+                            <i class="fas fa-file-pdf"></i> Descarcă PDF complet
+                        </button>
+                    </div>
+                </div>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="card rounded-4 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+                                <h6 class="mb-0">Locații disponibile pentru adăugare</h6>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAdaugaLocatie">
+                                    <i class="fas fa-plus-circle"></i> Adaugă locație nouă
+                                </button>
+                            </div>
+
+                            <ul id="disponibile-list" class="list-group"></ul>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal detalii locatie -->
+    <div class="modal fade" id="locationDetailsModal" tabindex="-1" aria-labelledby="locationDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="locationDetailsModalLabel">Detalii locație</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Închide"></button>
+                </div>
+                <div id="review-status-message" class="alert d-none mt-3" role="alert"></div>
+                <div class="modal-body">
+                    <div id="modal-location-content"></div>
+                    <div id="modal-rating-summary" class="mt-3 p-3 border rounded bg-light shadow-sm d-none" style="max-width: 500px;"></div>
+                    <hr>
+                    <ul id="modal-review-list" class="list-group mb-3"></ul>
+                    <form id="review-form">
+                        <div class="mb-2">
+                            <label for="review-rating" class="form-label">Rating (1-5):</label>
+                            <input type="number" id="review-rating" class="form-control" min="1" max="5" required />
+                        </div>
+                        <div class="mb-2">
+                            <label for="review-comment" class="form-label">Comentariu:</label>
+                            <textarea id="review-comment" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Trimite recenzie</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAdaugaLocatie" tabindex="-1" aria-labelledby="modalAdaugaLocatieLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="formAdaugaLocatie">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAdaugaLocatieLabel">Adaugă locație nouă</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Închide"></button>
+                    </div>
+                    <div class="modal-body row g-3">
+                        <div class="col-12">
+                            <div id="modalStatusMessage" class="alert d-none" role="alert"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Denumire</label>
+                            <input type="text" class="form-control" name="denumire" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Tip locație</label>
+                            <input type="text" class="form-control" name="tipLocatie" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">Descriere</label>
+                            <textarea class="form-control" name="descriere" rows="2" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Geolocație (lat, lon)</label>
+                            <input type="text" class="form-control" name="geolocatie" placeholder="ex: 48.8566, 2.3522" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Timp estimat (minute)</label>
+                            <input type="number" class="form-control" name="timpEstimativ" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Imagine (opțional)</label>
+                            <input type="text" class="form-control" name="imagineUrl" placeholder="/Images/Napoleon/nou.jpg">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Țară existentă</label>
+                            <select class="form-select" id="selectTara" name="taraId">
+                                <option value="">-- alege --</option>
+                                <!-- Populat din JS -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">sau Țară nouă</label>
+                            <input type="text" class="form-control" id="inputTaraNoua" name="taraNoua">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Oraș existent</label>
+                            <select class="form-select" id="selectOras" name="orasId">
+                                <option value="">-- alege --</option>
+                                <!-- Populat din JS -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">sau Oraș nou</label>
+                            <input type="text" class="form-control" id="inputOrasNou" name="orasNou">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Stradă</label>
+                            <input type="text" class="form-control" name="strada" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Număr stradă</label>
+                            <input type="text" class="form-control" name="numarStrada" required>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-primary">Salvează locația</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalConfirmStergere" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmare ștergere</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Sigur vrei să ștergi această locație definitiv? Această acțiune nu poate fi anulată.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anulează</button>
+                    <button type="button" id="btnConfirmaStergere" class="btn btn-danger">Șterge</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

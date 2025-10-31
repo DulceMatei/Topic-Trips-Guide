@@ -1,0 +1,121 @@
+﻿@page
+@model Licenta.Pages.TraseeIstoriceModel
+@{
+    ViewData["Title"] = "Trasee Istorice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mb-5 fw-bold text-dark">Trasee Istorice</h2>
+
+<div class="row g-4 justify-content-center">
+    <!-- Vlad Țepeș -->
+    <div class="col-md-6 col-lg-5 col-xxl-4">
+        <div class="card route-card h-100 shadow-lg border-0">
+            <div class="position-relative overflow-hidden">
+                <img src="/images/vlad.jpg" class="card-img-top route-image img-vlad" alt="Vlad Țepeș">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-person-badge text-success fs-4 me-2"></i>
+                        <h3 class="card-title text-white fw-bold mb-0">Vlad Țepeș</h3>
+                    </div>
+                    <p class="card-text text-light">Explorare istorică a locurilor marcante din viața lui Vlad Țepeș.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="/Trasee/VladTepes" class="btn btn-outline-success w-100 rounded-3 fw-semibold">
+                    <i class="bi bi-map me-2"></i> Explorează traseul
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Otto von Bismarck -->
+    <div class="col-md-6 col-lg-5 col-xxl-4">
+        <div class="card route-card h-100 shadow-lg border-0">
+            <div class="position-relative overflow-hidden">
+                <img src="/images/bismarck.jpg" class="card-img-top route-image img-bismarck" alt="Otto von Bismarck">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-person-badge text-success fs-4 me-2"></i>
+                        <h3 class="card-title text-white fw-bold mb-0">Otto von Bismarck</h3>
+                    </div>
+                    <p class="card-text text-light">O incursiune în viața politică și personală a lui Otto von Bismarck.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="/Trasee/OttoVonBismarck" class="btn btn-outline-success w-100 rounded-3 fw-semibold">
+                    <i class="bi bi-map me-2"></i> Explorează traseul
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Napoleon Bonaparte -->
+    <div class="col-md-6 col-lg-5 col-xxl-4">
+        <div class="card route-card h-100 shadow-lg border-0">
+            <div class="position-relative overflow-hidden">
+                <img src="/images/napoleon.jpg" class="card-img-top route-image img-napoleon" alt="Napoleon Bonaparte">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-person-badge text-success fs-4 me-2"></i>
+                        <h3 class="card-title text-white fw-bold mb-0">Napoleon Bonaparte</h3>
+                    </div>
+                    <p class="card-text text-light">O incursiune în viața militară și politică a lui Napoleon Bonaparte.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="/Trasee/NapoleonBonaparte" class="btn btn-outline-success w-100 rounded-3 fw-semibold">
+                    <i class="bi bi-map me-2"></i> Explorează traseul
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .route-image {
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .route-card .card-img-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+        }
+
+        .img-vlad {
+            object-position: center 25%; 
+            height: 250px;
+        }
+
+        .img-bismarck {
+            object-position: center 15%; 
+            height: 250px;
+        }
+
+        .img-napoleon {
+            object-position: center 20%;
+            height: 250px;
+        }
+
+
+        .card-title, .card-text {
+            color: white;
+        }
+
+        @@media (max-width: 768px) {
+            .img-vlad {
+                height: 300px;
+            }
+
+            .img-bismarck {
+                height: 300px;
+            }
+            .img-napoleon {
+                height: 300px;
+            }
+        }
+    </style>
+}

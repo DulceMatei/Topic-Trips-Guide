@@ -1,0 +1,22 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Eroare";
+}
+<h1 class="text-danger">Eroare.</h1>
+<h2 class="text-danger">A apărut o eroare în timpul procesării cererii dumneavoastră.</h2>
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>ID Cerere:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+<h3>Modul de Dezvoltare</h3>
+<p>
+    Comutarea la mediul de <strong>Dezvoltare</strong> va afișa informații mai detaliate despre eroarea care a apărut.
+</p>
+<p>
+    <strong>Mediul de dezvoltare nu ar trebui să fie activat pentru aplicațiile implementate.</strong>
+    Poate rezulta în afișarea de informații sensibile din excepții către utilizatorii finali.
+    Pentru debugging local, activați mediul de <strong>Dezvoltare</strong> prin setarea variabilei de mediu <strong>ASPNETCORE_ENVIRONMENT</strong> la <strong>Development</strong>
+    și repornirea aplicației.
+</p>

@@ -1,0 +1,85 @@
+﻿@page
+@model EmailModel
+@{
+    ViewData["Title"] = "Gestionează Email";
+    ViewData["ActivePage"] = ManageNavPages.Email;
+}
+
+<div class="email-card mt-5">
+    <h2 class="text-center text-success mb-3">@ViewData["Title"]</h2>
+
+    <partial name="_StatusMessage" for="StatusMessage" />
+
+    <form method="post" novalidate>
+        <div asp-validation-summary="All" class="text-danger small mb-3"></div>
+
+        @if (Model.IsEmailConfirmed)
+        {
+            <div class="form-floating mb-3 position-relative">
+                <input asp-for="Email" class="form-control rounded-20" disabled />
+                <label asp-for="Email">Email actual</label>
+                <span class="position-absolute top-50 end-0 translate-middle-y pe-3 text-success fw-bold">✓</span>
+            </div>
+        }
+        else
+        {
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control rounded-20" disabled />
+                <label asp-for="Email">Email actual</label>
+            </div>
+        }
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.NewEmail" class="form-control rounded-20" placeholder="Introduceți noul email" />
+            <label asp-for="Input.NewEmail">Email nou</label>
+            <span asp-validation-for="Input.NewEmail" class="text-danger small"></span>
+        </div>
+
+        <button type="submit" asp-page-handler="ChangeEmail" class="btn btn-success w-100 rounded-20 fw-semibold">
+            Schimbă email
+        </button>
+    </form>
+</div>
+
+<style>
+    .email-card {
+        max-width: 500px;
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .form-control.rounded-20 {
+        border-radius: 1.25rem;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .btn.rounded-20 {
+        border-radius: 1.25rem;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    @@media (max-width: 576px) {
+        .email-card
+
+    {
+        padding: 1.5rem 1rem;
+        margin: 1rem;
+    }
+
+    .btn.rounded-20 {
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

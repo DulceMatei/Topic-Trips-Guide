@@ -1,0 +1,44 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Autentificare";
+    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
+    ViewBag.HideFooter = true;
+    ViewBag.HideNavbar = true;
+}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <section>
+            <form id="account" method="post">
+                <h2 class="d-flex justify-content-center">AUTENTIFICARE</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control rounded-20" autocomplete="username" aria-required="true" placeholder="nume@exemplu.com" />
+                    <label asp-for="Input.Email" class="form-label">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control rounded-20" autocomplete="current-password" aria-required="true" placeholder="parolă" />
+                    <label asp-for="Input.Password" class="form-label">Parolă</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        <label asp-for="Input.RememberMe" class="form-check-label">
+                            Ține-mă minte
+                        </label>
+                    </div>
+                    <a id="forgot-password" class="text-decoration-none" asp-page="./ForgotPassword">Ți-ai uitat parola?</a>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary rounded-20">Autentificare</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

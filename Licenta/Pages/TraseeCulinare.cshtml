@@ -1,0 +1,122 @@
+﻿@page
+@model Licenta.Pages.TraseeCulinareModel
+@{
+    ViewData["Title"] = "Trasee Culinare";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mb-5 fw-bold text-dark">Trasee Culinare</h2>
+
+<div class="row g-4 justify-content-center">
+    <!-- Bologna -->
+    <div class="col-md-6 col-lg-5 col-xxl-4">
+        <div class="card route-card h-100 shadow-lg border-0">
+            <div class="position-relative overflow-hidden">
+                <img src="/images/bologna.jpg" class="card-img-top route-image img-bologna" alt="Bologna">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-person-badge text-success fs-4 me-2"></i>
+                        <h3 class="card-title text-white fw-bold mb-0">Bologna</h3>
+                    </div>
+                    <p class="card-text text-light">Explorează inima gastronomiei italiene prin paste artizanale, trattorii tradiționale și delicatese autentice din Bologna.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="/Trasee/Bologna" class="btn btn-outline-success w-100 rounded-3 fw-semibold">
+                    <i class="bi bi-map me-2"></i> Explorează traseul
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lisabona -->
+    <div class="col-md-6 col-lg-5 col-xxl-4">
+        <div class="card route-card h-100 shadow-lg border-0">
+            <div class="position-relative overflow-hidden">
+                <img src="/images/lisabona.jpg" class="card-img-top route-image img-lisabona" alt="Lisabona">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-person-badge text-success fs-4 me-2"></i>
+                        <h3 class="card-title text-white fw-bold mb-0">Lisabona</h3>
+                    </div>
+                    <p class="card-text text-light">Descoperă gustul autentic al Lisabonei prin celebrele pastéis de nata, ciocolaterii artizanale și patiserii istorice.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="/Trasee/Lisabona" class="btn btn-outline-success w-100 rounded-3 fw-semibold">
+                    <i class="bi bi-map me-2"></i> Explorează traseul
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lyon -->
+    <div class="col-md-6 col-lg-5 col-xxl-4">
+        <div class="card route-card h-100 shadow-lg border-0">
+            <div class="position-relative overflow-hidden">
+                <img src="/images/lyon.jpg" class="card-img-top route-image img-lyon" alt="Lyon">
+                <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-person-badge text-success fs-4 me-2"></i>
+                        <h3 class="card-title text-white fw-bold mb-0">Lyon</h3>
+                    </div>
+                    <p class="card-text text-light">Descoperă capitala gastronomiei franceze prin bouchon-uri tradiționale, fromagerii și restaurante iconice din Lyon.</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="/Trasee/Lyon" class="btn btn-outline-success w-100 rounded-3 fw-semibold">
+                    <i class="bi bi-map me-2"></i> Explorează traseul
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .route-image {
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .route-card .card-img-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+        }
+
+        .img-bologna {
+            object-position: center 25%; 
+            height: 250px;
+        }
+
+        .img-lisabona {
+            object-position: center 15%; 
+            height: 250px;
+        }
+
+        .img-lyon {
+            object-position: center 20%;
+            height: 250px;
+        }
+
+
+        .card-title, .card-text {
+            color: white;
+        }
+
+        @@media (max-width: 768px) {
+            .img-bologna {
+                height: 300px;
+            }
+
+            .img-lyon {
+                height: 300px;
+            }
+
+            .img-lyon {
+                height: 300px;
+            }
+        }
+    </style>
+}

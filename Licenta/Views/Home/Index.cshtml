@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Explorează & Descoperă";
+}
+
+<!-- Hero Section -->
+<div class="hero-section rounded-4 p-4 p-md-5 text-white mb-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="display-3 fw-bold mb-4">
+                Descoperă-ți următoarea
+                <span class="d-block text-warning">Aventură</span>
+            </h1>
+            <p class="lead mb-4">
+                Explorează destinații uimitoare, creează amintiri de neuitat și lasă-ne să-ți ghidăm călătoria către locuri extraordinare.
+            </p>
+            <button class="btn btn-light btn-lg rounded-pill px-4 fw-semibold text-success" onclick="scrollToRoutes()">
+                Începe explorarea
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Route Types Section -->
+<section id="tipuri-trasee" class="mb-5">
+    <h2 class="text-center mb-5 fw-bold text-dark">Tipuri de Trasee</h2>
+    <div class="row g-4 justify-content-center">
+        <!-- Trasee Istorice -->
+        <div class="col-md-6 col-lg-5">
+            <div class="card route-card h-100 shadow-lg border-0">
+                <div class="position-relative overflow-hidden">
+                    <img src="/Images/istoric.jpg"
+                         class="card-img-top route-image" alt="Trasee Istorice">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-building text-success fs-4 me-2"></i>
+                            <h3 class="card-title text-white fw-bold mb-0">Trasee Istorice</h3>
+                        </div>
+                        <p class="card-text text-light">Călătorește prin timp și descoperă patrimoniul cultural al Europei</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <a href="/TraseeIstorice" class="btn btn-success w-100 rounded-3 fw-semibold">
+                        <i class="bi bi-building me-2"></i>
+                        Explorează Traseele Istorice
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trasee Culinare -->
+        <div class="col-md-6 col-lg-5">
+            <div class="card route-card h-100 shadow-lg border-0">
+                <div class="position-relative overflow-hidden">
+                    <img src="/Images/culinar.jpg"
+                         class="card-img-top route-image" alt="Trasee Culinare">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end p-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-cup-hot text-success fs-4 me-2"></i>
+                            <h3 class="card-title text-white fw-bold mb-0">Trasee Culinare</h3>
+                        </div>
+                        <p class="card-text text-light">Descoperă aromele și gusturile autentice ale Europei</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <a href="/TraseeCulinare" class="btn btn-success w-100 rounded-3 fw-semibold">
+                        <i class="bi bi-cup-hot me-2"></i>
+                        Explorează Traseele Culinare
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-5">
+            <h2 class="text-center mb-5 fw-bold text-dark">De ce TopicTripsGuide?</h2>
+            <div class="row g-5 text-center justify-content-center">
+                <div class="col-md-5">
+                    <div class="feature-item">
+                        <i class="bi bi-geo-alt-fill text-success fs-1 mb-4"></i>
+                        <h4 class="fw-bold text-success mb-3">Trasee Autentice</h4>
+                        <p class="text-muted fs-5">Descoperă locuri ascunse și experiențe locale autentice care îți vor rămâne în memorie pentru totdeauna</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="feature-item">
+                        <i class="bi bi-heart-fill text-success fs-1 mb-4"></i>
+                        <h4 class="fw-bold text-success mb-3">Personalizat</h4>
+                        <p class="text-muted fs-5">Creează-ți propriile trasee după preferințele tale și explorează Europa în ritmul tău</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        function scrollToRoutes() {
+            document.getElementById('tipuri-trasee')?.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+}

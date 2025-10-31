@@ -1,0 +1,544 @@
+﻿:root {
+    --primary-green: #95d82a;
+    --primary-green-hover: #82c024;
+}
+
+.login-logout-card {
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-top: 2rem;
+}
+
+    .login-logout-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 80px rgba(149, 216, 42, 0.15);
+    }
+
+    .login-logout-card .card-header {
+        background: linear-gradient(135deg, var(--primary-green) 0%, #7bc41a 100%);
+        border: none;
+        padding: 0;
+        border-radius: 2rem 2rem 0 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .login-logout-card .card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+    .login-logout-card .nav-tabs {
+        border: none;
+        background: transparent;
+        display: flex;
+        position: relative;
+        z-index: 2;
+    }
+
+        .login-logout-card .nav-tabs .nav-item {
+            margin: 0;
+            flex: 1;
+        }
+
+            .login-logout-card .nav-tabs .nav-item:first-child .nav-link {
+                border-radius: 2rem 0 0 0;
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .login-logout-card .nav-tabs .nav-item:last-child .nav-link {
+                border-radius: 0 2rem 0 0;
+            }
+
+        .login-logout-card .nav-tabs .nav-link {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            padding: 1.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+        }
+
+            .login-logout-card .nav-tabs .nav-link:hover {
+                color: white;
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                transform: translateY(-2px);
+            }
+
+            .login-logout-card .nav-tabs .nav-link.active {
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                border: none;
+                position: relative;
+                transform: translateY(-3px);
+                box-shadow: inset 0 -3px 0 white;
+            }
+
+                .login-logout-card .nav-tabs .nav-link.active::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60px;
+                    height: 4px;
+                    background: white;
+                    border-radius: 2px 2px 0 0;
+                }
+
+    .login-logout-card .card-body {
+        padding: 3rem 2rem 2rem;
+        background: white;
+    }
+
+    .login-logout-card h2 {
+        color: var(--primary-green);
+        font-weight: 700;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+
+    .login-logout-card .form-floating {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .login-logout-card .form-control {
+        border: 2px solid #e9ecef;
+        border-radius: 1rem;
+        padding: 1rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f8f9fa;
+    }
+
+        .login-logout-card .form-control:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.2rem rgba(149, 216, 42, 0.25);
+            background: white;
+            transform: translateY(-2px);
+        }
+
+    .login-logout-card .form-floating > label {
+        color: #6c757d;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .login-logout-card .form-control:focus ~ label,
+    .login-logout-card .form-control:not(:placeholder-shown) ~ label {
+        color: var(--primary-green);
+        transform: scale(0.9) translateY(-0.7rem);
+    }
+
+
+    .login-logout-card .d-flex.justify-content-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        gap: 1rem;
+        min-height: 2rem;
+    }
+
+    .login-logout-card .form-check {
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .login-logout-card .form-check-input {
+        border: 2px solid #dee2e6;
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+        width: 1.2em;
+        height: 1.2em;
+        margin-top: 0;
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+    }
+
+        .login-logout-card .form-check-input:checked {
+            background-color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+
+        .login-logout-card .form-check-input:focus {
+            box-shadow: 0 0 0 0.2rem rgba(149, 216, 42, 0.25);
+        }
+
+    .login-logout-card .form-check-label {
+        color: #495057;
+        font-weight: 500;
+        cursor: pointer;
+        user-select: none;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    .login-logout-card a {
+        color: var(--primary-green);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-block;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.3rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+        .login-logout-card a:hover {
+            color: var(--primary-green-hover);
+            text-decoration: underline;
+            background: rgba(149, 216, 42, 0.05);
+            transform: translateY(-1px);
+        }
+
+
+@media (min-width: 1400px) {
+    .login-logout-card .d-flex.justify-content-between {
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+-
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .login-logout-card .d-flex.justify-content-between {
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .login-logout-card .d-flex.justify-content-between {
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .login-logout-card .form-check-label {
+        font-size: 0.9rem;
+    }
+
+    .login-logout-card a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .login-logout-card .d-flex.justify-content-between {
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .login-logout-card .form-check {
+        flex: 0 1 auto;
+        min-width: 120px;
+    }
+
+    .login-logout-card .form-check-label {
+        font-size: 0.9rem;
+    }
+
+    .login-logout-card a {
+        flex: 0 0 auto;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+
+
+
+.login-logout-card .btn-primary {
+    background: linear-gradient(135deg, var(--primary-green) 0%, #7bc41a 100%);
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+    .login-logout-card .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .login-logout-card .btn-primary:hover::before {
+        left: 100%;
+    }
+
+    .login-logout-card .btn-primary:hover {
+        background: linear-gradient(135deg, #7bc41a 0%, var(--primary-green) 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(149, 216, 42, 0.4);
+    }
+
+    .login-logout-card .btn-primary:active {
+        transform: translateY(-1px);
+    }
+
+.login-logout-card hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+    margin: 2rem 0;
+}
+
+.login-logout-card .text-danger {
+    color: #dc3545 !important;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.login-logout-card .alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    color: #721c24;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+@media (max-width: 992px) {
+    .row .col-5 {
+        flex: 0 0 auto;
+        width: 80%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-logout-card {
+        margin: 1rem;
+        border-radius: 1.5rem;
+    }
+
+        .login-logout-card .card-body {
+            padding: 2rem 1.5rem;
+        }
+
+        .login-logout-card .nav-tabs .nav-link {
+            padding: 1.2rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .login-logout-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+    .row .col-5 {
+        flex: 0 0 auto;
+        width: 95%;
+        max-width: 500px;
+    }
+
+    .login-logout-card .form-floating {
+        margin-bottom: 1.2rem;
+    }
+
+    .login-logout-card .btn-primary {
+        padding: 1.2rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-logout-card .nav-tabs .nav-link {
+        padding: 1rem 0.8rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .login-logout-card .card-body {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .login-logout-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .row .col-5 {
+        width: 98%;
+        margin: 0.5rem auto;
+    }
+
+    .login-logout-card {
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .login-logout-card .nav-tabs .nav-link {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .login-logout-card .card-body {
+        padding: 1.5rem 1rem;
+    }
+
+    .login-logout-card h2 {
+        font-size: 1.3rem;
+    }
+}
+
+.login-logout-card .form-floating {
+    animation: slideInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+    .login-logout-card .form-floating:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .login-logout-card .form-floating:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .login-logout-card .form-floating:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .login-logout-card .form-floating:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+.login-logout-card .btn-primary {
+    animation: slideInUp 0.6s ease-out 0.5s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-logout-card .form-control:focus,
+.login-logout-card .form-check-input:focus,
+.login-logout-card .btn:focus {
+    outline: none;
+}
+
+.login-logout-card .form-floating:hover .form-control {
+    border-color: rgba(149, 216, 42, 0.5);
+    background: white;
+}
+
+.login-logout-card .btn-primary:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+body:has(.login-logout-card) {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+    body:has(.login-logout-card)::before {
+        content: '';
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(-45deg, #e9ecef, #d4edda, #f8f9fa, #ffffff);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        pointer-events: none;
+        z-index: -2;
+    }
+
+@keyframes floatingGreen {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-5%, -10%) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-10%, 5%) rotate(-1deg);
+    }
+
+    75% {
+        transform: translate(5%, -5%) rotate(0.5deg);
+    }
+}
+
+.login-logout-card .form-floating > .form-control:focus ~ label,
+.login-logout-card .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+.login-logout-card .form-control.is-valid {
+    border-color: var(--primary-green);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2395d82a' d='m2.3 6.73.94-.94 2.94 2.94L8.6 6.3 7.66 5.36 4.24 8.78 1.36 5.9z'/%3e%3c/svg%3e");
+}
+
+.login-logout-card .form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 2.4 2.4M8.2 4.6l-2.4 2.4'/%3e%3c/svg%3e");
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

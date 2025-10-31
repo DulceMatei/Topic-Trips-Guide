@@ -1,0 +1,62 @@
+﻿@page
+@model Licenta.Areas.Identity.Pages.Account.ConfirmEmailChangeModel
+@{
+    ViewData["Title"] = "Confirmare email nou";
+    ViewBag.HideFooter = true;
+    ViewBag.HideNavbar = true;
+}
+
+<div class="email-change-card mt-5 text-center">
+    <h2 class="mb-3 text-success">@ViewData["Title"]</h2>
+    <p class="text-muted mb-4">@Model.StatusMessage</p>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a class="btn btn-outline-success rounded-3 px-4" asp-page="/Index">
+            <i class="bi bi-house-door me-1"></i> Mergi la pagina principală
+        </a>
+    }
+    else
+    {
+        <a class="btn btn-outline-success rounded-3 px-4" asp-page="./Login">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Autentifică-te
+        </a>
+    }
+</div>
+
+<style>
+    .email-change-card {
+        max-width: 500px;
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-success {
+        border: 2px solid var(--primary-green);
+        color: var(--primary-green);
+        background-color: transparent;
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline-success:hover {
+            background-color: var(--primary-green);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(149, 216, 42, 0.3);
+            text-decoration: none;
+        }
+
+    @@media (max-width: 576px) {
+        .email-change-card
+
+    {
+        padding: 1.5rem 1rem;
+        margin: 1rem;
+    }
+
+    }
+</style>

@@ -1,0 +1,43 @@
+﻿@page
+@model PersonalDataModel
+@{
+    ViewData["Title"] = "Date Personale";
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+
+<div id="personal-data-container" class="card p-4 mt-3">
+    <h3 class="text-success text-center mb-3">@ViewData["Title"]</h3>
+    <p class="mb-3">
+        <strong>Ștergerea acestor date va elimina permanent contul dvs. și nu poate fi recuperat.</strong>
+    </p>
+    <a id="delete" asp-page="DeletePersonalData" class="btn custom-outline-danger rounded-20 px-4">
+        <i class="bi bi-trash me-1"></i> Șterge contul
+    </a>
+</div>
+
+<style>
+    #personal-data-container {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+        #personal-data-container .custom-outline-danger {
+            border: 2px solid #dc3545;
+            color: #dc3545;
+            transition: all 0.3s ease;
+        }
+
+            #personal-data-container .custom-outline-danger:hover {
+                background-color: #dc3545;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+            }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
