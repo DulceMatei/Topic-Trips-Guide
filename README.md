@@ -160,3 +160,91 @@ cd Topic-Trips-Guide
 2. **Configure database connection**
 
 Copy ```appsettings.example.json``` to ```appsettings.json```
+
+Update connection strings for MySQL / SQLite
+
+3. **Apply database migrations**
+
+First, create the migration (if not already created):
+
+```bash
+dotnet ef migrations add InitialCreate
+```
+
+Then apply the migration to the database:
+
+```bash
+dotnet ef database update
+```
+
+4. **Run the application**
+
+```bash
+dotnet run
+```
+
+5. **Access the app in your browser**
+
+```http://localhost:5000```
+
+## ⚠️ Notes
+
+Ensure MySQL server is running before applying migrations.
+
+```InitialCreate``` migration sets up all the required tables for the application.
+
+---
+
+# Database & Data Model
+
+The application uses MySQL to store information about users, routes, locations, images, themes, and reviews.
+
+## Entities
+
+### User
+- Attributes: `id_user`, `name`, `email`, `password`, `registration_date`
+- Semantic Key: `email`
+
+### UserRole
+- Attributes: `id`, `user_id`, `role_id`
+- Semantic Key: `user_id * role_id`
+
+### Role
+- Attributes: `id`, `name`
+- Semantic Key: `name`
+
+### Route
+- Attributes: `id_route`, `route_name`, `description`, `estimated_duration`, `creation_date`, `user_id`, `theme_id`
+- Semantic Key: `route_name`
+
+### Theme
+- Attributes: `id_theme`, `name`, `type`, `creation_date`
+- Semantic Key: `name`
+
+### Location
+- Attributes: `id_location`, `name`, `location_type`, `description`, `estimated_time`, `geolocation`, `street`, `street_number`, `city_id`
+- Semantic Key: `name * geolocation`
+
+### City
+- Attributes: `id_city`, `name`, `country_id`
+- Semantic Key: `name * country_id`
+
+### Country
+- Attributes: `id_country`, `name`
+- Semantic Key: `name`
+
+### Image
+- Attributes: `id_image`, `image_name`, `path`, `location_id`
+- Semantic Key: `location_id * image_name`
+
+### Review
+- Attributes: `id_review`, `review_code`, `review_date`, `comment`, `rating`, `user_id`, `location_id`
+- Semantic Keys: `review_code`, `user_id * location_id * review_date`
+
+### LocationTheme
+- Attributes: `id_location_theme`, `location_id`, `theme_id`
+- Semantic Key: `location_id * theme_id`
+
+### Itinerary
+- Attributes: `id_itinerary`, `date`, `order_number`, `location_theme_id`, `route_id`
+- Semantic Key: `route_id * location_theme_id * order_number`
