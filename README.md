@@ -12,7 +12,7 @@
 8. [Requirements & Installation](#requirements--installation)
 9. [Database & Data Model](#database--data-model)
 10. [Architecture (MVVM)](#architecture-mvvm)
-11. [Pages / Modules Overview](#-pages--modules-overview)   
+11. [Pages Overview](#pages-overview)
 12. [Conclusion](#-conclusion)
 13. [License](#-license)
 
