@@ -183,7 +183,7 @@ Ensure MySQL server is running before applying migrations.
 
 ---
 
-# Database & Data Model
+## Database & Data Model
 
 The application uses MySQL to store information about users, routes, locations, images, themes, and reviews.
 
