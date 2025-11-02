@@ -273,4 +273,53 @@ Main features:
 
 Password security is ensured through ASP.NET Identity, which automatically hashes passwords using secure encryption algorithms, preventing access to plain-text passwords even if the database is compromised.
 
-![Login Page](.images/3Login.png)
+<p align="center">
+  <img src="./images/3Login.png" alt="Login Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./images/4ForgotPassword.png" alt="Reset Password" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./images/5Email-restare-parola.png" alt="Reset Password Email" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./images/6ResetPassword.png" alt="Reset Password2" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./images/7ResetPasswordConfirmation.png" alt="Reset Password Confirmation" width="600"/>
+</p>
+
+### 📝 Registration Page
+
+The Registration Page allows users to create a new account in the application.
+
+Error messages are displayed if any fields are incorrectly filled or left empty.
+
+<p align="center">
+  <img src="./images/8Register.png" alt="Registration Page" width="600"/>
+</p>
+
+
+### 🏠 Main Page – TopicTripsGuide
+
+The Main Page welcomes users with a friendly message and displays two central cards, allowing users to choose between Historical Routes and Culinary Routes.
+   - Top-left navigation: Logo and app name, redirecting to the main page.
+   - Top-right navigation:
+        - Logout button – signs out the user.
+        - Profile button – opens account details.
+        - Custom Routes button – shows user’s saved routes.
+        - Admin Panel button (visible to administrators) – access to management features.
+   - Bottom card: Provides information about why Topic Trips Guide is a good choice.
+   - Footer: Logo, app name, short description, and quick navigation links to Profile, Historical Routes, Culinary Routes, and Custom Routes.
+
+<p align="center">
+  <img src="./images/9Pagina-principala-1.png" alt="Main Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./images/10Pagina-principala-2.png" alt="Main Page2" width="600"/>
+</p>
