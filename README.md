@@ -261,3 +261,16 @@ The project uses the MVVM (Model–View–ViewModel) pattern provided by Razor P
 
 ## Pages Overview
 
+### 🔐 Login Page
+
+The Login Page allows users to securely access their accounts in the application.
+It includes validation for incorrect or empty input fields and displays appropriate error messages.
+
+Main features:
+
+   - Forgot Password? – lets users reset their password via an email link.
+   - Remember Me – keeps the user logged in even after the session ends.
+
+Password security is ensured through ASP.NET Identity, which automatically hashes passwords using secure encryption algorithms, preventing access to plain-text passwords even if the database is compromised.
+
+![Login Page](.images/3Login.png)
