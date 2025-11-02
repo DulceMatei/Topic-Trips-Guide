@@ -261,5 +261,18 @@ The Topic Trips Guide application follows a Client–Server architecture, typica
 
    - Client (Frontend): built with HTML, CSS, JavaScript, and Leaflet for interactive maps.
    - Server (Backend): developed in ASP.NET Core with Razor Pages, handling logic, authentication, routes, and reviews.
-   - Database: uses MySQL, containing entities such as UTILIZATOR, TRASEU, LOCATIE, and RECENZIE.
+   - Database: uses MySQL, containing entities such as `UTILIZATOR`, `TRASEU`, `LOCATIE`, and `RECENZIE`.
    - APIs: integrates OpenRouteService for routing and OpenStreetMap for map visualization.
+
+![General Architecture](./images/2Arhitectura%20generala%20a%20sistemului.png)
+
+### 🧱 MVVM Model (Razor Pages)
+
+The project uses the MVVM (Model–View–ViewModel) pattern provided by Razor Pages:
+
+   - Model: defines data structures (`User`, `Traseu`, `Recenzie`, etc.)
+   - ViewModel: `.cshtml.cs` files containing page logic
+   - View: `.cshtml` files defining UI with Razor, HTML, CSS, JS
+
+---
+
