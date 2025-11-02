@@ -471,3 +471,28 @@ The Delete Account section has a card called Personal Data, allowing the user to
 </p>
 
 ## 🏁 Conclusion
+
+The project involved the development, implementation, and testing of Topic Trips Guide, a modern platform for users passionate about travel, history, and gastronomy.
+
+The main goal was to provide an easy-to-use platform that allows users to:
+   - Explore predefined thematic routes
+   - Customize routes according to their personal preferences
+
+Although primarily aimed at tourists, the application can also help locals discover more about their region.
+
+Key functionalities include:
+   - Historical and culinary predefined routes
+   - Customizable routes, savable as PDFs
+   - Interactive maps using OpenStreetMap and OpenRouteService
+   - Each location includes a mini-wiki, geolocation, and user reviews
+   - Admin-moderated review system for better content control
+
+All initial project objectives were met. The most challenging part was implementing the route customization system, requiring dynamic and flexible solutions.
+
+During development, I gained deep experience in ASP.NET Core and C#, learned to work with ASP.NET Identity for authentication, and used Leaflet and mapping APIs for the first time. I also improved my JavaScript skills and frontend-backend interaction via AJAX.
+
+Future improvements could include:
+   - More predefined routes
+   - Advanced filtering options
+   - Search functionality
+   - Integration with a premium API plan to remove request limitations
