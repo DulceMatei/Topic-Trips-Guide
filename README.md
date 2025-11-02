@@ -469,3 +469,5 @@ The Delete Account section has a card called Personal Data, allowing the user to
    <img src="./images/28Stergere-cont.png" alt="Delete Account Section" width="700"/>
    <img src="./images/29Stergere-cont-2.png" alt="Delete Account Section2" width="700"/>
 </p>
+
+## 🏁 Conclusion
