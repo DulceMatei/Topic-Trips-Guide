@@ -248,3 +248,6 @@ The application uses MySQL to store information about users, routes, locations, 
 ### Itinerary
 - Attributes: `id_itinerary`, `date`, `order_number`, `location_theme_id`, `route_id`
 - Semantic Key: `route_id * location_theme_id * order_number`
+
+![Database Diagram](./images/1Diagrama DEA.png)
+
