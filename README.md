@@ -259,3 +259,5 @@ The project uses the MVVM (Model–View–ViewModel) pattern provided by Razor P
 
 ---
 
+## Pages Overview
+
