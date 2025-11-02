@@ -496,3 +496,15 @@ Future improvements could include:
    - Advanced filtering options
    - Search functionality
    - Integration with a premium API plan to remove request limitations
+
+## 📄 License
+
+This project is licensed under the MIT License – see the [LICENSE](./LICENSE) file for details.
+
+You are free to:
+   - Use the project
+   - Modify it
+   - Distribute it
+   - Include it in your own projects
+
+Under the conditions specified in the LICENSE file.
