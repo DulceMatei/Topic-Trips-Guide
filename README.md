@@ -107,7 +107,7 @@ The topic was chosen due to a passion for **history and travel**, combining expl
 
 ---
 
-## ⚙️ Requirements & Installation
+## Requirements & Installation
 
 To run Topic Trips Guide, your system must meet the following requirements and follow the installation steps.
 
