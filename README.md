@@ -111,25 +111,17 @@ The topic was chosen due to a passion for **history and travel**, combining expl
 
 To run Topic Trips Guide, your system must meet the following requirements and follow the installation steps.
 
----
-
 ### 🖥️ System Requirements
 - Windows 10 or higher (or any OS supporting .NET 8.0)  
 - Modern web browser (Chrome, Edge, Firefox, Safari)
-
----
 
 ### 💻 Development Tools
 - Visual Studio 2022 Community Edition  
 - .NET SDK 8.0
 
----
-
 ### 🗄️ Database
 - MySQL server installed and running  
 - Optional: SQLite for local testing/development
-
----
 
 ### 📦 NuGet Packages / Dependencies
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore 8.0.11  
@@ -142,13 +134,9 @@ To run Topic Trips Guide, your system must meet the following requirements and f
 - QuestPDF 2025.5.0  
 - System.Text.Json 8.0.5
 
----
-
 ### 🌐 API / Services
 - OpenRouteService API key for route calculations  
 - Access to OpenStreetMap data for interactive maps
-
----
 
 ### 🛠️ Installation Instructions
 
@@ -187,7 +175,7 @@ dotnet run
 
 ```http://localhost:5000```
 
-## ⚠️ Notes
+### ⚠️ Notes
 
 Ensure MySQL server is running before applying migrations.
 
