@@ -12,7 +12,7 @@
 8. [Requirements & Installation](#-requirements--installation)
 9. [Database & Data Model](#-database--data-model)
 10. [Architecture (MVVM)](#-architecture-mvvm)
-11. [Pages / Modules Overview](#-pages--modules-overview)
+11. [Pages / Modules Overview](#-pages--modules-overview)   
    - [Login / Authentication](#login--authentication)
    - [Students / Users](#students--users)
    - [Courses / Specializations](#courses--specializations)
@@ -251,3 +251,15 @@ The application uses MySQL to store information about users, routes, locations, 
 
 ![Database Diagram](./images/1Diagrama%20DEA.png)
 
+---
+
+## Architecture (MVVM)
+
+### 🏗️ General Architecture
+
+The Topic Trips Guide application follows a Client–Server architecture, typical for modern web systems:
+
+   - Client (Frontend): built with HTML, CSS, JavaScript, and Leaflet for interactive maps.
+   - Server (Backend): developed in ASP.NET Core with Razor Pages, handling logic, authentication, routes, and reviews.
+   - Database: uses MySQL, containing entities such as UTILIZATOR, TRASEU, LOCATIE, and RECENZIE.
+   - APIs: integrates OpenRouteService for routing and OpenStreetMap for map visualization.
