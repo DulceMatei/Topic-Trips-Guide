@@ -323,3 +323,149 @@ The Main Page welcomes users with a friendly message and displays two central ca
 <p align="center">
   <img src="./images/10Pagina-principala-2.png" alt="Main Page2" width="600"/>
 </p>
+
+### 📜 Historical & 🍽️ Culinary Routes Pages
+
+These pages display cards that redirect users to:
+   - Predefined historical routes associated with different historical figures.
+   - Thematic culinary routes highlighting local food experiences.
+
+<p align="center">
+   <img src="./images/11Trasee-istorice.png" alt="Historical Routes Page" width="600"/>
+   <img src="./images/12Trasee-culinare.png" alt="Culinary Routes Page" width="600"/>
+</p>
+
+### 🗺️ Predefined Routes Page
+
+The Predefined Routes page contains:
+
+📝 Left Panel – Locations Card
+   - Shows all locations of the selected route.
+   - Each location has a Details & Reviews button opening a modal with:
+        - Mini wiki description (name, address, coordinates, estimated visit time, image)
+        - User reviews with star ratings
+   - Admins can add, remove, or reorder locations. Removed locations go to a “Available Locations” card.
+   - Users can select transport mode (car, bike, walking) to update total distance and estimated duration.
+   - Admins see a Save Route button.
+
+🗺️ Center Panel – Interactive Map
+   - Locations are marked in order on the map.
+   - Routes are generated automatically using the OpenRouteService API.
+   - Clicking a location centers the map on it.
+
+🔘 Bottom Buttons
+   - View Full Route – resets map to show all locations.
+   - Customize – create a personalized route.
+   - View on Google Maps – open the route in Google Maps.
+   - Download PDF – generate a PDF summary with images, mini wiki descriptions, times, and distances.
+
+🖼️ Modal Sections
+   - Mini Wiki – name, address, coordinates, description, estimated time, image.
+   - Reviews – progress bar shows average rating; users can add or delete their reviews. Admins can delete all reviews if needed.
+
+<p align="center">
+   <img src="./images/13Traseu-prestabilit.png" alt="Predefined Route Page" width="700"/>
+   <img src="./images/14Traseu-prestabilit-admin.png" alt="Predefined Route Page Admin" width="700"/>
+   <img src="./images/15Modal.png" alt="Modal" width="700"/>
+</p>
+
+### ✨ Personalized Routes Page
+
+The Personalized Routes page has a similar layout to the Predefined Routes page, but users can reorder or remove locations in their route.
+
+📝 Left Panel – Locations Card
+   - Shows all locations in the selected route.
+   - Each location has a Details & Reviews button opening a modal with:
+        - Mini wiki description (name, address, coordinates, estimated visit time, image)
+        - User reviews with star ratings
+   - Users can select transport mode (car, bike, walking).
+   - Users can save the customized route.
+
+🗺️ Center Panel – Interactive Map
+   - Locations are connected in order using OpenRouteService API.
+   - Clicking a location centers the map on it.
+
+🔘 Bottom Buttons
+   - View Full Route – resets map to show all locations.
+   - View on Google Maps – open the route in Google Maps.
+   - Download PDF – generates a PDF summary with images, mini wiki descriptions, times, and distances.
+
+<p align="center">
+  <img src="./images/16Traseu-personalizat.png" alt="Personalized Route Page" width="700"/>
+</p>
+
+### 🗂️ Your Personalized Routes Page
+
+This page displays a card with all routes the user has created.
+   - Users can view or delete their personalized routes.
+
+<p align="center">
+   <img src="./images/17Traseele tale personalizate.png" alt="Your Personalized Routes Page" width="700"/>
+   <img src="./images/18Stergere.png" alt="Your Personalized Routes Page Delete" width="700"/>
+</p>
+
+### 🛠️ Admin Panel Page
+
+On this page, the administrator has access to two main sections:
+   - Predefined Routes Section – displays cards with all predefined routes, which the admin can access to modify their content.
+   - User Reviews Section – contains a card listing user reviews, redirecting the admin to the review moderation page where they can manage review content.
+
+<p align="center">
+  <img src="./images/19panou-admin.png" alt="Admin Panel Page" width="700"/>
+</p>
+
+### 📝 Admin Reviews Page
+
+On this page, the administrator can moderate user-submitted reviews.
+   - Reviews are displayed in a structured table containing:
+        - Location
+        - User who posted the review
+        - Email address
+        - Rating
+        - Comment
+        - Date of submission
+   - Each review also has a delete button for the admin to remove it if necessary.
+
+<p align="center">
+   <img src="./images/20Recenzii-admin.png" alt="Admin Reviews Page" width="700"/>
+   <img src="./images/21Stergere-2.png" alt="Admin Reviews Page Delete" width="700"/>
+</p>
+
+### 👤 Profile Page
+
+This page has four sections: Profile, Email, Password, and Delete Account. Each section allows the user to view and manage their personal information.
+   - Profile section:
+        - Shows the current username in a card called Profile
+        - User can edit their name directly in this section
+
+<p align="center">
+  <img src="./images/22Profil.png" alt="Profile Page" width="700"/>
+</p>
+
+The Email section contains a card called Manage Email, which displays the user’s current email.
+   - Users can change their email address.
+   - If the entered email is invalid or the same as the current one, an error message is shown.
+
+<p align="center">
+   <img src="./images/23email.png" alt="Email Section" width="700"/>
+   <img src="./images/24Confirmare email nou.png" alt="Confirm email" width="700"/>
+   <img src="./images/25email-change.png" alt="Email Change" width="700"/>
+   <img src="./images/26confirmare email nou pagina.png" alt="Confirm email change" width="700"/>
+</p>
+
+The Password section contains a card called Change Password, allowing the user to update their password.
+   - Three fields are required: Current Password, New Password, Confirm Password.
+   - If the current password is wrong, the new passwords don’t match, the new password is invalid, or any field is empty, an error message is displayed.
+
+<p align="center">
+  <img src="./images/27parola.png" alt="Password Section" width="700"/>
+</p>
+
+The Delete Account section has a card called Personal Data, allowing the user to delete their account.
+   - To confirm, the user must enter their password.
+   - If the password is incorrect, an error message is displayed.
+
+<p align="center">
+   <img src="./images/28Stergere-cont.png" alt="Delete Account Section" width="700"/>
+   <img src="./images/29Stergere-cont-2.png" alt="Delete Account Section2" width="700"/>
+</p>
