@@ -13,11 +13,6 @@
 9. [Database & Data Model](#database--data-model)
 10. [Architecture (MVVM)](#architecture-mvvm)
 11. [Pages / Modules Overview](#-pages--modules-overview)   
-   - [Login / Authentication](#login--authentication)
-   - [Students / Users](#students--users)
-   - [Courses / Specializations](#courses--specializations)
-   - [Registrations / Enrollments](#registrations--enrollments)
-   - [Reports / PDF Export](#reports--pdf-export)
 12. [Conclusion](#-conclusion)
 13. [License](#-license)
 
